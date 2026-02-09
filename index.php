@@ -1,111 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Héctor Alejandro</title>
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Bootstrap Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Google Fonts: Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <!-- Tu CSS personalizado -->
-    <link rel="stylesheet" href="css/styles.css">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
-    <title>Portfolio Héctor Alejandro</title>
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+  </style>
 </head>
+<body class="text-gray-800">
 
-<body>
-    <!-- Encabezado -->
-    <header class="text-center py-5 bg-light">
-        <h1 class="mb-2">I am Héctor Alejandro</h1>
-        <p class="lead mb-3">Web Developer Junior</p>
-        <a href="https://www.linkedin.com/in/héctor-alejandro-provenzano-blanco" target="_blank"
-            class="text-decoration-none text-primary fs-3 me-2">
-            <i class="bi bi-linkedin"></i>
-        </a>
-        <a href="https://github.com/AlejandroProve" target="_blank" class="text-decoration-none text-dark fs-3">
-            <i class="bi bi-github"></i>
-        </a>
-    </header>
+  <!-- Header -->
+  <header class="text-center py-20 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white shadow-lg flex flex-col items-center">
+    <img src="<?php echo 'images/yo.png'; ?>" alt="Héctor Alejandro" class="w-36 h-36 rounded-full border-4 border-white mb-6 object-cover">
+    <h1 class="text-5xl font-bold mb-3 drop-shadow-lg">I am Héctor Alejandro</h1>
+    <p class="text-2xl mb-6 drop-shadow">Web Developer Junior</p>
+    <div class="flex justify-center gap-6 text-4xl">
+      <a href="https://www.linkedin.com/in/héctor-alejandro-provenzano-blanco" target="_blank" class="hover:text-blue-200 transition-colors">
+        <i class="bi bi-linkedin"></i>
+      </a>
+      <a href="https://github.com/AlejandroProve" target="_blank" class="hover:text-gray-200 transition-colors">
+        <i class="bi bi-github"></i>
+      </a>
+    </div>
+    <div class="mt-8 animate-bounce">
+      <i class="bi bi-chevron-double-down text-3xl"></i>
+    </div>
+  </header>
 
-    <!-- Proyectos -->
-    <section id="projects" class="container my-5">
-        <h2 class="mb-4 text-center">Projects</h2>
-        <div class="row g-4">
-            <!-- Proyecto 1 -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Project 1</h5>
-                        <p class="card-text">Brief description of the project goes here.</p>
-                        <div class="mt-auto">
-                            <a href="#" class="btn btn-outline-primary btn-sm">View Project</a>
-                            <a href="#" class="btn btn-outline-secondary btn-sm">Source Code</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Project 1</h5>
-                        <p class="card-text">Brief description of the project goes here.</p>
-                        <div class="mt-auto">
-                            <a href="#" class="btn btn-outline-primary btn-sm">View Project</a>
-                            <a href="#" class="btn btn-outline-secondary btn-sm">Source Code</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Project 1</h5>
-                        <p class="card-text">Brief description of the project goes here.</p>
-                        <div class="mt-auto">
-                            <a href="#" class="btn btn-outline-primary btn-sm">View Project</a>
-                            <a href="#" class="btn btn-outline-secondary btn-sm">Source Code</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <!-- About Me -->
+  <section class="max-w-3xl mx-auto text-center py-20 bg-gray-50 rounded-xl shadow-lg my-12">
+    <h2 class="text-4xl font-semibold mb-6">About Me</h2>
+    <p class="text-lg leading-relaxed">
+      I am a passionate junior web developer with experience in HTML, CSS, JavaScript, PHP, and Tailwind CSS. 
+      I love building modern, responsive, and visually appealing websites that make an impact.
+    </p>
+  </section>
+
+  <!-- Projects -->
+  <section class="max-w-6xl mx-auto py-20 bg-gradient-to-r from-blue-50 via-purple-50 to-pink-50 rounded-xl my-12">
+    <h2 class="text-4xl font-semibold text-center mb-12">Projects</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+      
+      <!-- Project Card -->
+      <div class="bg-white rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition duration-300 overflow-hidden">
+        <img src="images/proyecto1.png" alt="Proyecto 1" class="w-full h-56 object-cover">
+        <div class="p-6 flex flex-col">
+          <h3 class="text-2xl font-bold mb-3">Calculadora JS</h3>
+          <p class="flex-grow mb-4 text-gray-700">A calculator built with HTML, CSS, and JavaScript. Interactive and responsive.</p>
+          <div class="flex gap-3">
+            <a href="#" class="flex-1 py-2 text-center bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg shadow hover:from-blue-600 hover:to-purple-600 transition">View Project</a>
+            <a href="#" class="flex-1 py-2 text-center bg-gray-200 rounded-lg hover:bg-gray-300 transition">Source Code</a>
+          </div>
         </div>
-    </section>
+      </div>
 
-    <!-- Contacto -->
-    <section id="contact" class="container my-5">
-        <h2 class="mb-4 text-center">Contact</h2>
+      <!-- Project Card 2 -->
+      <div class="bg-white rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition duration-300 overflow-hidden">
+        <img src="images/proyecto2.png" alt="Proyecto 2" class="w-full h-56 object-cover">
+        <div class="p-6 flex flex-col">
+          <h3 class="text-2xl font-bold mb-3">Landing Page</h3>
+          <p class="flex-grow mb-4 text-gray-700">Responsive landing page built with HTML, CSS, and Bootstrap. Clean design and smooth UX.</p>
+          <div class="flex gap-3">
+            <a href="#" class="flex-1 py-2 text-center bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg shadow hover:from-blue-600 hover:to-purple-600 transition">View Project</a>
+            <a href="#" class="flex-1 py-2 text-center bg-gray-200 rounded-lg hover:bg-gray-300 transition">Source Code</a>
+          </div>
+        </div>
+      </div>
 
-        <form action="send_mail.php" method="POST" class="mx-auto" style="max-width:500px;">
-            <div class="mb-3">
-                <label for="name" class="form-label">Name:</label>
-                <input type="text" class="form-control" id="name" name="name" required>
-            </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">Email:</label>
-                <input type="email" class="form-control" id="email" name="email" required>
-            </div>
-            <div class="mb-3">
-                <label for="message" class="form-label">Write your message:</label>
-                <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary w-100">Send</button>
-        </form>
+      <!-- Project Card 3 -->
+      <div class="bg-white rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition duration-300 overflow-hidden">
+        <img src="images/proyecto3.png" alt="Proyecto 3" class="w-full h-56 object-cover">
+        <div class="p-6 flex flex-col">
+          <h3 class="text-2xl font-bold mb-3">Portfolio PHP</h3>
+          <p class="flex-grow mb-4 text-gray-700">My portfolio built with PHP and Tailwind, including a contact form with PHPMailer integration.</p>
+          <div class="flex gap-3">
+            <a href="#" class="flex-1 py-2 text-center bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg shadow hover:from-blue-600 hover:to-purple-600 transition">View Project</a>
+            <a href="#" class="flex-1 py-2 text-center bg-gray-200 rounded-lg hover:bg-gray-300 transition">Source Code</a>
+          </div>
+        </div>
+      </div>
 
-        <!-- Mensaje de confirmación -->
-        <?php if(isset($_GET['success']) && $_GET['success'] == '1'): ?>
-        <p class="text-center text-success mt-3">Sucessfily sended</p>
-        <?php elseif(isset($_GET['success']) && $_GET['success'] == '0'): ?>
-        <p class="text-center text-danger mt-3">Error.</p>
-        <?php endif; ?>
-    </section>
+    </div>
+  </section>
 
+  <!-- Contact -->
+  <section class="max-w-2xl mx-auto py-20 bg-gray-100 rounded-xl shadow-lg my-12">
+    <h2 class="text-4xl font-semibold text-center mb-8">Contact Me</h2>
+    <form action="send_mail.php" method="POST" class="bg-white p-8 rounded-xl shadow-xl flex flex-col gap-4">
+      <input type="text" name="name" placeholder="Name" class="border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+      <input type="email" name="email" placeholder="Email" class="border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+      <textarea name="message" placeholder="Write your message" rows="5" class="border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+      <button type="submit" class="bg-gradient-to-r from-blue-500 to-purple-500 text-white py-3 rounded-lg shadow hover:from-blue-600 hover:to-purple-600 transition">Send Message</button>
+    </form>
 
+    <?php
+      if(isset($_GET['success'])){
+        if($_GET['success']=='1'){
+          echo '<p class="text-green-600 text-center mt-4 text-lg font-semibold">Message sent successfully!</p>';
+        } elseif($_GET['success']=='0'){
+          echo '<p class="text-red-600 text-center mt-4 text-lg font-semibold">Error sending message.</p>';
+        }
+      }
+    ?>
+  </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Footer -->
+  <footer class="text-center py-8 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white">
+    <p>&copy; 2026 Héctor Alejandro. All rights reserved.</p>
+  </footer>
+
 </body>
-
 </html>

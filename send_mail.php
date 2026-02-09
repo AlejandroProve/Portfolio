@@ -1,31 +1,38 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-    // Limpiar y validar los datos
-    $name = strip_tags(trim($_POST["name"]));
-    $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
-    $message = trim($_POST["message"]);
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
 
-    
-    $to = "cipher.node.9@proton.me";
-    $subject = "Nuevo mensaje desde tu portafolio";
-    $body = "Nombre: $name\nEmail: $email\n\nMensaje:\n$message";
+$name = strip_tags(trim($_POST["name"]));
+$email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
+$message = trim($_POST["message"]);
 
-    // Cabeceras del correo
-    $headers = "From: $email\r\n";
-    $headers .= "Reply-To: $email\r\n";
+$mail = new PHPMailer(true);
 
-    // Enviar correo
-    if(mail($to, $subject, $body, $headers)) {
-        header("Location: index.html?success=1");
-        exit;
-    } else {
-        header("Location: index.html?success=0");
-        exit;
-    }
-} else {
-    // Si alguien accede directamente al PHP sin enviar el formulario
-    header("Location: index.html");
+try {
+    $mail->isSMTP();
+    $mail->Host = 'smtp.gmail.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = 'tucorreo@gmail.com';      // tu Gmail
+    $mail->Password = 'tu_app_password';        // App Password generado
+    $mail->SMTPSecure = 'tls';
+    $mail->Port = 587;
+
+    $mail->setFrom($email, $name);
+    $mail->addAddress('tucorreo@gmail.com', 'Héctor Alejandro'); 
+
+    $mail->isHTML(false);
+    $mail->Subject = 'Nuevo mensaje desde tu portafolio';
+    $mail->Body    = "Nombre: $name\nEmail: $email\n\nMensaje:\n$message";
+
+    $mail->send();
+    header("Location: index.php?success=1");
+    exit;
+} catch (Exception $e) {
+    header("Location: index.php?success=0");
     exit;
 }
 ?>
